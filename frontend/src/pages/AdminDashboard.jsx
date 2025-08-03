@@ -516,7 +516,9 @@ const AdminDashboard = () => {
   // Fetch gallery
   const fetchGallery = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/gallery");
+      // const res = await axios.get("http://localhost:5000/api/gallery");
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/gallery`)
+
       setGallery(res.data.reverse());
     } catch (err) {
       console.error("Failed to fetch gallery:", err);
