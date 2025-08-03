@@ -8,7 +8,9 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/gallery");
+        // const res = await axios.get("http://localhost:5000/api/gallery");
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/gallery`)
+
 
         // Sort and slice to get latest 6 images
         const sorted = res.data.sort(
