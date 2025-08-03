@@ -83,6 +83,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const AdminLogin = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -99,7 +100,7 @@ const AdminLogin = () => {
       // Save user info to localStorage
       localStorage.setItem("userInfo", JSON.stringify(data));
       alert("Login successful");
-      const navigate = useNavigate();
+      
 navigate("/admin-dashboard");
       // window.location.href = "/admin-dashboard"; 
       // or use useNavigate()
