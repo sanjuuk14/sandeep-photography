@@ -78,7 +78,7 @@
 // };
 
 // export default AdminLogin;
-
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import axios from "axios";
 
@@ -99,7 +99,10 @@ const AdminLogin = () => {
       // Save user info to localStorage
       localStorage.setItem("userInfo", JSON.stringify(data));
       alert("Login successful");
-      window.location.href = "/admin-dashboard"; // or use useNavigate()
+      const navigate = useNavigate();
+navigate("/admin-dashboard");
+      // window.location.href = "/admin-dashboard"; 
+      // or use useNavigate()
     } catch (error) {
       alert("Login failed: " + error.response.data.message);
     }
